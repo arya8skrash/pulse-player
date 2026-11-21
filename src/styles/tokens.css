@@ -1,0 +1,140 @@
+/*
+ * Pulse design tokens. Colours are RGB triplets so Tailwind can add alpha: rgb(var(--accent) / 0.5).
+ * Eight colour schemes x two modes. <html data-theme="midnight" data-mode="dark">.
+ * Palettes are deliberately muted: no saturated neon, accents are soft and low-chroma.
+ */
+:root {
+  --blur: 25px;
+  --radius: 20px;
+  --anim-speed: 1;
+  --glass-tint: 255 255 255;
+  --shade: 0 0 0;
+}
+
+/* ---------- Midnight Blue ---------- */
+:root, [data-theme="midnight"][data-mode="dark"] {
+  --bg-base: 4 6 14;
+  --aurora-1: 16 30 66; --aurora-2: 28 26 72; --aurora-3: 10 44 60; --aurora-4: 24 34 54;
+  --accent: 140 168 245; --accent-2: 150 196 226;
+  --text: 232 237 248; --text-dim: 148 160 188;
+  --glass-alpha: 0.04; --glass-border: 0.1; --blob-opacity: 0.25;
+}
+[data-theme="midnight"][data-mode="light"] {
+  --bg-base: 238 242 250;
+  --aurora-1: 158 190 245; --aurora-2: 178 186 245; --aurora-3: 180 224 244; --aurora-4: 200 210 240;
+  --accent: 62 94 190; --accent-2: 70 130 190;
+  --text: 24 32 56; --text-dim: 92 104 132;
+  --glass-alpha: 0.5; --glass-border: 0.7; --blob-opacity: 0.75; --shade: 40 60 110;
+}
+
+/* ---------- Soft Amethyst ---------- */
+[data-theme="amethyst"][data-mode="dark"] {
+  --bg-base: 8 6 14;
+  --aurora-1: 42 30 70; --aurora-2: 60 42 84; --aurora-3: 32 42 74; --aurora-4: 70 46 76;
+  --accent: 184 160 230; --accent-2: 208 176 222;
+  --text: 238 233 248; --text-dim: 164 154 188;
+  --glass-alpha: 0.04; --glass-border: 0.1; --blob-opacity: 0.25;
+}
+[data-theme="amethyst"][data-mode="light"] {
+  --bg-base: 246 242 252;
+  --aurora-1: 205 190 238; --aurora-2: 226 204 242; --aurora-3: 192 206 242; --aurora-4: 236 206 228;
+  --accent: 112 74 172; --accent-2: 156 92 160;
+  --text: 40 28 60; --text-dim: 110 98 134;
+  --glass-alpha: 0.5; --glass-border: 0.7; --blob-opacity: 0.75; --shade: 90 60 130;
+}
+
+/* ---------- Deep Ocean ---------- */
+[data-theme="ocean"][data-mode="dark"] {
+  --bg-base: 2 8 13;
+  --aurora-1: 8 38 56; --aurora-2: 10 56 56; --aurora-3: 16 34 62; --aurora-4: 12 48 62;
+  --accent: 104 196 206; --accent-2: 128 176 224;
+  --text: 232 245 248; --text-dim: 140 170 182;
+  --glass-alpha: 0.04; --glass-border: 0.1; --blob-opacity: 0.25;
+}
+[data-theme="ocean"][data-mode="light"] {
+  --bg-base: 238 247 248;
+  --aurora-1: 168 216 232; --aurora-2: 164 226 216; --aurora-3: 184 204 236; --aurora-4: 192 232 236;
+  --accent: 16 112 140; --accent-2: 40 98 160;
+  --text: 14 40 54; --text-dim: 80 110 124;
+  --glass-alpha: 0.5; --glass-border: 0.7; --blob-opacity: 0.75; --shade: 30 90 110;
+}
+
+/* ---------- Soft Rose ---------- */
+[data-theme="rose"][data-mode="dark"] {
+  --bg-base: 12 6 9;
+  --aurora-1: 60 28 40; --aurora-2: 76 42 52; --aurora-3: 48 32 58; --aurora-4: 66 46 44;
+  --accent: 226 156 174; --accent-2: 232 184 156;
+  --text: 248 236 240; --text-dim: 188 160 170;
+  --glass-alpha: 0.04; --glass-border: 0.1; --blob-opacity: 0.25;
+}
+[data-theme="rose"][data-mode="light"] {
+  --bg-base: 252 244 246;
+  --aurora-1: 245 198 210; --aurora-2: 250 218 204; --aurora-3: 228 204 238; --aurora-4: 246 208 218;
+  --accent: 168 62 96; --accent-2: 186 100 82;
+  --text: 56 24 36; --text-dim: 130 96 108;
+  --glass-alpha: 0.5; --glass-border: 0.7; --blob-opacity: 0.75; --shade: 130 60 80;
+}
+
+/* ---------- Deep Emerald ---------- */
+[data-theme="emerald"][data-mode="dark"] {
+  --bg-base: 4 12 9;
+  --aurora-1: 10 40 30; --aurora-2: 12 50 36; --aurora-3: 8 32 40; --aurora-4: 18 54 42;
+  --accent: 150 220 180; --accent-2: 160 230 200;
+  --text: 235 248 240; --text-dim: 150 180 165;
+  --glass-alpha: 0.04; --glass-border: 0.1; --blob-opacity: 0.25;
+}
+[data-theme="emerald"][data-mode="light"] {
+  --bg-base: 240 248 244;
+  --aurora-1: 170 220 190; --aurora-2: 180 235 210; --aurora-3: 160 210 200; --aurora-4: 190 230 210;
+  --accent: 30 120 70; --accent-2: 40 140 100;
+  --text: 18 40 28; --text-dim: 80 110 90;
+  --glass-alpha: 0.5; --glass-border: 0.7; --blob-opacity: 0.75; --shade: 30 80 50;
+}
+
+/* ---------- Carbon Slate ---------- */
+[data-theme="slate"][data-mode="dark"] {
+  --bg-base: 9 10 12;
+  --aurora-1: 30 34 42; --aurora-2: 40 44 52; --aurora-3: 24 28 34; --aurora-4: 46 50 58;
+  --accent: 200 210 220; --accent-2: 220 225 235;
+  --text: 240 242 245; --text-dim: 150 155 165;
+  --glass-alpha: 0.04; --glass-border: 0.1; --blob-opacity: 0.2;
+}
+[data-theme="slate"][data-mode="light"] {
+  --bg-base: 245 246 248;
+  --aurora-1: 200 204 210; --aurora-2: 215 218 225; --aurora-3: 190 195 205; --aurora-4: 225 228 232;
+  --accent: 60 70 80; --accent-2: 80 90 100;
+  --text: 20 24 30; --text-dim: 100 108 118;
+  --glass-alpha: 0.5; --glass-border: 0.7; --blob-opacity: 0.75; --shade: 40 50 60;
+}
+
+/* ---------- Muted Copper ---------- */
+[data-theme="copper"][data-mode="dark"] {
+  --bg-base: 14 9 6;
+  --aurora-1: 60 34 20; --aurora-2: 72 40 24; --aurora-3: 50 28 18; --aurora-4: 80 44 26;
+  --accent: 230 180 150; --accent-2: 240 200 170;
+  --text: 248 240 235; --text-dim: 180 160 150;
+  --glass-alpha: 0.04; --glass-border: 0.1; --blob-opacity: 0.25;
+}
+[data-theme="copper"][data-mode="light"] {
+  --bg-base: 252 246 242;
+  --aurora-1: 240 210 190; --aurora-2: 245 220 200; --aurora-3: 230 200 180; --aurora-4: 245 215 195;
+  --accent: 160 80 40; --accent-2: 180 100 60;
+  --text: 50 30 20; --text-dim: 120 90 75;
+  --glass-alpha: 0.5; --glass-border: 0.7; --blob-opacity: 0.75; --shade: 100 60 40;
+}
+
+/* ---------- Twilight Rose ---------- */
+[data-theme="twilight"][data-mode="dark"] {
+  --bg-base: 8 9 16; /* Very dark navy */
+  --aurora-1: 30 24 40; --aurora-2: 60 30 35; --aurora-3: 20 30 50; --aurora-4: 70 40 35;
+  --accent: 217 143 115; --accent-2: 232 165 152; /* Copper/rose gold */
+  --text: 245 240 238; --text-dim: 170 160 155;
+  --glass-alpha: 0.05; --glass-border: 0.1; --blob-opacity: 0.3;
+}
+[data-theme="twilight"][data-mode="light"] {
+  --bg-base: 250 245 243;
+  --aurora-1: 240 210 200; --aurora-2: 230 190 180; --aurora-3: 220 200 210; --aurora-4: 245 220 210;
+  --accent: 190 100 80; --accent-2: 210 120 100;
+  --text: 40 30 30; --text-dim: 120 100 95;
+  --glass-alpha: 0.5; --glass-border: 0.7; --blob-opacity: 0.75; --shade: 130 80 70;
+}

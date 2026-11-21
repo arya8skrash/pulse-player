@@ -1,0 +1,49 @@
+[package]
+name = "pulse"
+version = "1.4.0"
+description = "Pulse — a liquid-glass desktop music player"
+edition = "2021"
+rust-version = "1.77"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "protocol-asset"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-log = "2"
+tauri-plugin-global-shortcut = "2"
+log = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+tauri-plugin-single-instance = "2"
+rustfft = "6"
+discord-rich-presence = "0.2.4"
+rayon = "1.10"
+reqwest = { version = "0.12", default-features = false, features = ["brotli", "cookies", "gzip", "json", "rustls-tls-native-roots", "system-proxy"] }
+tokio = { version = "1", features = ["net", "rt", "time"] }
+sabr-rs = { path = "vendor/sabr-rs" }
+rustypipe-botguard = { path = "vendor/rustypipe-botguard" }
+chrono = "0.4"
+once_cell = "1"
+
+
+# Audio: Symphonia decodes, cpal outputs. Pulse does its own channel mapping, resampling,
+# EQ, crossfade and buffering (see src/audio) instead of relying on rodio.
+cpal = "0.15"
+symphonia = { version = "0.5", features = ["flac", "mp3", "aac", "alac", "isomp4", "ogg", "vorbis", "wav", "pcm"] }
+symphonia-adapter-libopus = "0.2.9"
+
+# Library: SQLite (bundled), tags, folder walking
+rusqlite = { version = "0.32", features = ["bundled"] }
+lofty = "0.22"
+walkdir = "2"
+blake3 = "1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true

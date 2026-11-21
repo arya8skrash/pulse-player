@@ -1,0 +1,30 @@
+[package]
+name = "rustypipe-botguard"
+version = "0.1.2"
+edition = "2021"
+rust-version = "1.70"
+license = "MIT"
+description = "Run YouTube Botguard challenges and generate PO tokens"
+repository = "https://codeberg.org/ThetaDev/rustypipe-botguard"
+
+[lib]
+name = "rustypipe_botguard"
+path = "src/lib.rs"
+
+[dependencies]
+brotli = "8.0.0"
+byteorder = "1.5.0"
+data-encoding = "2.3.3"
+deno_console = "0.187.0"
+deno_core = { version = "0.331.0", features = ["v8_use_custom_libcxx"], default-features = false }
+deno_url = "0.187.0"
+deno_web = "0.218.0"
+deno_webidl = "0.187.0"
+log = "0.4"
+reqwest = { version = "0.12", features = ["brotli", "gzip", "json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+time = { version = "0.3.37", features = ["serde", "serde-well-known"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+urlencoding = "2.1.3"
